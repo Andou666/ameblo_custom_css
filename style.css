@@ -1,0 +1,578 @@
+@charset "UTF-8";
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
+/*
+【CSS編集 目次】
+改定版
+FLOCSS設計指針でやっていけるように修正していきたい
+
+
+
+*/
+/* 1. Foundation */
+body {
+  color: #333333; }
+
+/* 2. Layout */
+header {
+  background: #C31416;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  transform: rotate(-1deg); }
+
+/* 3. Object */
+/*
+-----------------------------------------
+ 【CSS編集 目次】
+
+　(1) 文字のスタイル
+　(2) ボタンのスタイル
+　(3) エリアのスタイル
+　(4) その他、拡張
+
+  ※CSS編集で広告を修正しないでください
+  （規約違反に該当する可能性があります）
+-----------------------------------------
+*/
+/*
+＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊
+
+
+　(1) 文字のスタイル
+
+
+＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊
+*/
+/* (1-1) 全体の文字
+--------------------------------------------*/
+/* 通常文字 */
+.skinTextColor, .skinBaseTextColor, .skinBlock {
+  color: #333333; }
+
+/* リンク */
+.skinAnchorColor, .skinBaseAnchorColor, .skinBlock a, a {
+  color: #0066cc; }
+
+a:hover,
+.skin-headerTitle:hover,
+.skin-tileItem a,
+.skin-btn:hover, .skin-btnPrimary:hover,
+.skin-btnSide:hover, .skin-btnSidePrimary:hover,
+.skin-widget .skin-linkList a:hover, .skin-widget .skin-linkListToggle:hover,
+.skin-archiveNavTabs li a span:hover {
+  /* 記事一覧ページのタブ */
+  opacity: 1.0; }
+
+/* 訪問済のリンク */
+.skinAnchorVisitedColor, .skinBaseAnchorVisitedColor, .skinBlock a:visited, a:visited {
+  color: #996699; }
+
+/* マウスオーバーしたときのリンク */
+.skinAnchorHoverColor, .skinBaseAnchorHoverColor, .skinBlock a:focus, .skinBlock a:hover, a:focus, a:hover {
+  color: #ff3366; }
+
+/* 弱い文字 （日付など）*/
+.skinWeakColor, .skinBaseWeakColor {
+  color: #999999; }
+
+/* 強い文字 （NEW! 更新!など）*/
+.skinStrongColor, .skinBaseStrongColor {
+  color: #ff3399; }
+
+dd.skin-rankingResult {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0 12px;
+  background: black;
+  color: white; }
+
+/* (1-2) ブログタイトル文字
+--------------------------------------------*/
+/* skinTitle ブログタイトル文字 */
+.skinTitle, .skinTitle:visited, .skinTitle:hover, .skinTitle:focus {
+  color: white;
+  font-weight: bold;
+  font-size: 2.11em; }
+
+/* skinDescription ブログの説明文字 */
+.skinDescription {
+  /*color:#333333;*/
+  color: white; }
+
+/* (1-3) 記事／メッセージボード内の文字のスタイル
+--------------------------------------------*/
+/* skinArticleTitle 記事タイトル文字 */
+.skinArticleTitle, .skinArticleTitle:hover, .skinArticleTitle:focus, .skinArticleTitle:visited {
+  font-size: 1.31em;
+  font-weight: bold;
+  color: #0066cc; }
+
+.contentNew.skinStrongColor {
+  padding: 3px;
+  font-weight: bold;
+  color: #C31416;
+  background: black;
+  display: inline-block;
+  transform: rotate(-3deg); }
+
+.contentNew.skinStrongColor:first-letter {
+  color: white;
+  font-size: 1.5em; }
+
+/* いいねボタンなど */
+p[data-uranus-component="entryButton"] {
+  outline: black 2px solid;
+  filter: drop-shadow(4px 2px #C31416); }
+
+p[data-uranus-component="entryButton"] {
+  transform: rotate(-2deg);
+  margin-right: 4px; }
+
+/* (1-4) サイドバー内の文字のスタイル
+--------------------------------------------*/
+/* skinMenuTitle サイドメニュータイトル文字 */
+.skinMenuTitle {
+  padding: 3px 15px;
+  background: black;
+  color: white; }
+
+/* ユーザ名 */
+.profileUserNickname em a {
+  background: black;
+  padding: 0 12px;
+  color: white;
+  font-size: 170%; }
+
+.profileUserNickname em a:hover {
+  background: white;
+  color: black;
+  border: black 2px solid;
+  text-decoration: none; }
+
+/* 自己紹介 */
+.profileDetailArea .freeText {
+  margin-top: 12px; }
+
+/* ペタ */
+.profileUserPages.skinWeakColor:nth-child(3) {
+  margin-top: 20px;
+  margin-left: 12px; }
+
+.profileUserPages.skinWeakColor:nth-child(3) a {
+  background: black;
+  color: white;
+  padding: 3px 23px;
+  display: inline-block;
+  transform: rotate(7deg);
+  filter: drop-shadow(4px 2px #C31416); }
+
+.profileUserPages.skinWeakColor:nth-child(3) a::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: " \f1b0"; }
+
+.profileUserPages.skinWeakColor:nth-child(3) a:hover {
+  background: white;
+  color: black;
+  outline: solid  black 2px;
+  text-decoration-line: none; }
+
+/* ピグへ */
+.profileUserPages.skinWeakColor:nth-child(2) {
+  margin-top: 8px;
+  margin-left: 4px;
+  display: inline-block;
+  transform: rotate(-3deg);
+  color: white;
+  filter: drop-shadow(3px 4px #C31416); }
+
+.profileUserPages.skinWeakColor:nth-child(2) a {
+  background: black;
+  color: white;
+  padding: 4px 2px;
+  padding-left: 5px; }
+
+.profileUserPages.skinWeakColor:nth-child(2) a:hover {
+  background: white;
+  color: black;
+  outline: solid  black 2px;
+  text-decoration-line: none; }
+
+/* ブログ読者 */
+.readerMenu .skinMenuTitle::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0c0　"; }
+
+/*
+＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊
+
+
+ (2) ボタンのスタイル
+ ※ボタンの背景画像や文字の色などを指定
+
+
+＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊
+*/
+/* (2-1) ボタン[横180px 縦35px]
+--------------------------------------------*/
+/* ボタンの背景画像 ※[横180px 縦35px]のボタンの背景画像を指定 */
+.skinImgBtnM {
+  background-image: url(https://stat100.ameba.jp/p_skin/wu_pf_cssedit/img/skin_btn_m.png); }
+
+/* ボタンの文字色 */
+.skinImgBtnM:hover span, .skinImgBtnM:focus span, .skinImgBtnM span {
+  color: #333333 !important; }
+
+/* (2-2) アイコン付きボタン[横128px 縦28px]
+--------------------------------------------*/
+/* アイコン付き ボタンの背景画像 ※[横128px 縦28px]のボタンの背景画像を指定 */
+.skinImgBtnS {
+  background-image: url(https://stat100.ameba.jp/p_skin/wu_pf_cssedit/img/skin_btn_s.png);
+  background: black; }
+
+.profileBtnArea li:nth-child(1) {
+  transform: rotate(-4deg);
+  filter: drop-shadow(5px 5px #C31416);
+  margin: 8px 0; }
+
+.profileBtnArea li:nth-child(2) {
+  padding-left: 24px;
+  filter: drop-shadow(5px 5px #C31416);
+  margin: 8px 0; }
+
+.profileBtnArea li:nth-child(3) {
+  transform: rotate(4deg);
+  filter: drop-shadow(5px 5px #C31416);
+  margin: 8px 0; }
+
+.skinImgBtnS:hover span, .skinImgBtnS:focus span, .skinImgBtnS span {
+  /*
+   アイコン画像は下記から指定
+   menu_icons_pastel.png (パステル）
+   menu_icons_gray.png（グレー）
+   menu_icons_black.png（黒）
+   menu_icons_white.png（白）
+  */
+  background-image: url(https://stat100.ameba.jp/common_style/img/skin/cmn/icons/menu_icons/menu_icons_pastel.png);
+  /*color:#333333 !important; ←ボタンの文字色 */
+  color: white; }
+
+/* (2-3) ページ送りボタンの  << 次へ 、前へ >> 、「次の記事タイトル」 >> ボタン
+--------------------------------------------*/
+.skinSimpleBtn, .skinSimpleBtn:visited, .skinSimpleBtn:hover, .skinSimpleBtn:focus {
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  color: #0066cc !important; }
+
+/* ボタンにマウスオーバー */
+.skinSimpleBtn:hover, .skinSimpleBtn:focus {
+  background: #f7f7f7; }
+
+/*
+＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊
+
+
+ (3) エリアのスタイル
+ ※背景画像、サイズ、ボーダーなどを各部分ごとに指定
+
+
+＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊
+*/
+.layoutContentsA {
+  display: flex;
+  flex-wrap: wrap; }
+
+/* (3-1) ボディ（全体）
+--------------------------------------------*/
+/* skinBody ボディ */
+/* ←ブログ全体に背景を敷きたいとき */
+/* (3-2) ブログヘッダー
+--------------------------------------------*/
+/* skinHeaderArea ブログヘッダー980pxエリア */
+/* ←ブログヘッダーに背景画像を敷きたいとき */
+/* skinBlogHeadingGroupArea タイトルと説明を囲うエリア */
+.skinBlogHeadingGroupArea {
+  padding: 20px 10px 30px;
+  margin: 10px 23px;
+  background: black;
+  color: white;
+  transform: skew(-10deg); }
+
+/* skinTitleArea ブログタイトルのエリア */
+.skinTitleArea {
+  padding-bottom: 4px; }
+
+/* skinDescriptionArea ブログの説明エリア */
+.skinDescriptionArea {
+  color: white; }
+
+/* (3-3) コンテンツエリア
+--------------------------------------------*/
+/* skinContentsArea コンテンツ980pxエリア */
+.skinContentsArea {
+  /* 注 ベースのcssにwidth:980px;の記述有り */ }
+
+/* (3-4) メインエリア
+--------------------------------------------*/
+.skinFrame {
+  background: black;
+  color: white; }
+
+.skinMainArea2 {
+  margin-top: 16px;
+  margin-right: 12px; }
+
+/* (3-5) メッセージボード
+--------------------------------------------*/
+.skinMessageBoard {
+  /* 注 ベースのcssに margin-bottom の記述有り */
+  border-top: 1px dotted #979797;
+  border-bottom: 1px dotted #979797;
+  background: #ffffff;
+  /* ←メッセージボードに背景を敷きたいとき */ }
+
+.skinMessageBoard3 {
+  padding: 16px 30px; }
+
+/* (3-6) 記事
+--------------------------------------------*/
+/* skinArticle 記事エリア */
+.skinArticle {
+  /* 注　ベースのcssに margin-bottom の記述有り */
+  padding: 16px 0;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  /* ←記事に背景を敷きたいとき */ }
+
+/* skinArticleHeader 記事タイトルエリア */
+.skinArticleHeader {
+  margin: 0 29px;
+  padding: 2px 10px;
+  border-left: 5px solid #e4e4e4; }
+
+/* skinArticleBody 記事本文エリア */
+.skinArticleBody2 {
+  margin: 0 29px; }
+
+/* skinArticleFooter 記事フッターエリア */
+.skinArticleFooter {
+  margin: 10px 29px 0;
+  border-top: 1px dotted #949494; }
+
+.blogTopBtn {
+  border: white 3px solid;
+  transform: skew(8deg);
+  filter: drop-shadow(-4px 4px #C31416); }
+
+.articleListBtn {
+  border: white 3px solid;
+  transform: skew(-8deg);
+  filter: drop-shadow(4px 4px #C31416); }
+
+.imageListBtn {
+  border: white 3px solid;
+  transform: skew(8deg);
+  filter: drop-shadow(4px 4px #C31416); }
+
+/* (3-7) サイドバーエリア
+--------------------------------------------*/
+/* サイドバーエリア共通 */
+/* 300pxのサイドバーエリア */
+/* 180pxのサイドバーエリア */
+.skinSubArea ul {
+  padding: 0 5px; }
+
+/* (3-8) サイドバー　メニュー
+--------------------------------------------*/
+/* skinMenu サイドバー　メニューのエリア */
+.skinMenu {
+  /* 注　ベースのcssに margin-bottom の記述有り */
+  background: #f7f7f7;
+  /* ←サイドメニューに背景を敷きたいとき */ }
+
+/* skinMenuHeader サイドメニュータイトルエリア */
+.skinMenuHeader {
+  padding: 5px 10px;
+  font-weight: bold;
+  background: #D71618;
+  /* ←サイドメニューのタイトルに背景を敷きたいとき */ }
+
+/* skinMenuBody サイドメニュー本文エリア */
+.skinMenuBody {
+  margin: 10px;
+  padding: 10px;
+  background: #ffffff;
+  /* ←サイドメニューの本文に背景を敷きたいとき */ }
+
+#js-profileTag {
+  background: white; }
+
+.readerHeader em {
+  font-size: 170%;
+  background: black;
+  color: white;
+  padding: 0 5px; }
+
+/* (3-9) サイドバーの　リスト画像、ボーダー　※要素のbottomに指定すること
+--------------------------------------------*/
+.skinSubHr,
+.skinSubList li {
+  margin-bottom: 3px;
+  padding-bottom: 3px;
+  display: block;
+  border-bottom: 1px dotted #b3b3b3; }
+
+.skinSubA2 {
+  margin-top: 5px;
+  color: black; }
+
+/* (3-10) コメント欄、記事一覧などの一覧
+--------------------------------------------*/
+/* 背景色 */
+.skinBgColor, .skinBaseBgColor, .skinBlock {
+  background-color: #ffffff; }
+
+/* 弱い背景色 */
+.skinWeakBgColor, .skinBaseWeakBgColor {
+  background-color: #f7f7f7; }
+
+/* 強い背景色 */
+.skinStrongBgColor, .skinBaseStrongBgColor {
+  background-color: #f7f7f7; }
+
+/* 枠線の色 */
+.skinBorderColor, .skinBaseBorderColor, .skinBlock {
+  border-color: #dddddd; }
+
+/* 境界線の色 */
+.skinBorderHr, .skinBorderList li {
+  border-color: #b3b3b3; }
+
+/* プロフィール画像 */
+.profileMenu .skinMenuTitle::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f630　"; }
+
+.userProfileImage img {
+  transform: rotate(-12deg);
+  border: 3px solid #D71618;
+  filter: drop-shadow(-4px 4px black); }
+
+.userProfileImage {
+  background: black; }
+
+a.freeTextLink {
+  margin: 2px 2px 4px 2px;
+  padding: 0 4px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  filter: drop-shadow(2px 3px #D71618);
+  transform: rotate(-3deg); }
+
+a.freeTextLink:hover {
+  background: white;
+  color: black;
+  outline: solid  black 2px; }
+
+/*
+＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊
+
+
+ (4) その他、拡張
+
+
+＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊:::＊
+*/
+/* カレンダー */
+.calendarMenu .skinMenuTitle::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: " \f073　"; }
+
+.sun {
+  background: #C31416;
+  color: white;
+  transform: rotate(-12deg); }
+
+.fri {
+  background: #F8E21D;
+  color: black;
+  border: 2px solid black;
+  transform: rotate(-2deg); }
+
+.sat {
+  background: #2C7BD5;
+  color: white;
+  transform: rotate(4deg); }
+
+/* RSS */
+.rss > div:first-child {
+  margin-top: 4px; }
+
+.rss.skinFieldBlock {
+  background: #C31416;
+  padding: 5px 5px;
+  border: 3px solid white; }
+
+.rss.skinFieldBlock a {
+  font-weight: bold;
+  padding-right: 4px;
+  color: white; }
+
+.rssBtn {
+  outline: white 2px solid;
+  margin: 5px 2px 7px 2px; }
+
+.rssDescription {
+  margin-top: 17px;
+  transform: rotate(3deg); }
+
+/* その他、拡張があれば記述 */
+/* 記事本文 */
+.articleText {
+  color: black; }
+
+.articleText h1 {
+  border-bottom: solid 3px #C31416;
+  padding-bottom: 0; }
+
+.articleText h1:first-letter {
+  color: white;
+  background: #C31416;
+  font-size: 1.3em; }
+
+/* エラー */
+.error {
+  background: black;
+  outline: #C31416 2px solid;
+  margin-bottom: 4px; }
+
+.error img {
+  transform: rotate(3deg);
+  outline: #C31416 4px solid;
+  filter: drop-shadow(7px 9px white); }
+
+/* ウェルカムメッセージ */
+.skinMessageBoard {
+  background: black;
+  outline: white 2px solid;
+  color: white; }
+
+/* 広告位置微修正 */
+/* 大きな変更は規約違反にあたる可能性があります。修正の際は注意 */
+.subAdBannerArea {
+  margin-bottom: 3px; }
+
+/* 記事一覧 */
+.tab {
+  border-radius: 0%; }
+
+.currentTab {
+  background: black;
+  color: white;
+  outline: white 2px solid; }
+
+.currentTab a {
+  color: white; }
